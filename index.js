@@ -1,7 +1,7 @@
 const http = require('http');
 const url = require('url');
 
-class Terrain {
+class Webu {
   constructor() {
     this.routes = {
       GET: [],
@@ -108,4 +108,4 @@ class Terrain {
 
 // terrain.start(3000);
 
-module.exports = Terrain;
+module.exports = Webu;
