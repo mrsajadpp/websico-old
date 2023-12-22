@@ -89,14 +89,6 @@ webu.error((req, res) => {
 });
 ```
 
-### Custom Start Messages
-
-You can customize the start message for your server.
-
-```javascript
-webu.setStartMessage('Custom message:');
-```
-
 ## Contributing
 
 Feel free to contribute by opening issues or submitting pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
