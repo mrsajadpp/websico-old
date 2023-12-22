@@ -15,7 +15,10 @@ npm install webu.js
 ## Usage
 
 ```javascript
-const Webu = require('webu');
+const fs = require('fs');
+const path = require('path');
+const Webu = require('webu.js');
+const webu = new Webu();
 
 const webu = new Webu();
 
@@ -27,6 +30,18 @@ webu.get('/', (req, res) => {
 // Handling PUT requests
 webu.put('/update', (req, res) => {
   res.send(200, 'Resource updated successfully!');
+});
+
+// Handling files
+webu.get('/file', (req, res) => {
+    // Specify the path to your HTML file
+    const htmlFilePath = path.join(__dirname, 'index.html');
+
+    // Read the HTML file
+    fs.readFile(htmlFilePath, 'utf8', (err, data) => {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data);
+    });
 });
 
 // Setting a custom error page for 404 errors

@@ -1,6 +1,6 @@
 {
   "name": "webu.js",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A lightweight and flexible web server framework for Node.js.",
   "main": "index.js",
   "scripts": {

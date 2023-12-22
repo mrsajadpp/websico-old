@@ -59,27 +59,28 @@ class Webu {
     this.startMessage = message;
   }
 
-  sendFile(res, filePath, contentType = 'text/html') {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('Internal Server Error');
-      } else {
-        res.writeHead(200, { 'Content-Type': contentType });
-        res.end(data);
-      }
-    });
-  }
+  // sendFile(res, filePath, contentType = 'text/html') {
+  //   fs.readFile(filePath, (err, data) => {
+  //     if (err) {
+  //       res.writeHead(500, { 'Content-Type': 'text/plain' });
+  //       res.end('Internal Server Error');
+  //     } else {
+  //       console.log(err);
+  //       res.writeHead(200, { 'Content-Type': contentType });
+  //       res.end(data);
+  //     }
+  //   });
+  // }
 
-  send(res, statusCode, body, headers = {}) {
-    if (headers['Content-Type'] === 'text/html' && typeof body === 'string') {
-      // Treat body as an HTML file path
-      this.sendFile(res, path.join(__dirname, body), 'text/html');
-    } else {
-      res.writeHead(statusCode, { ...headers, 'Content-Type': 'text/plain' });
-      res.end(body);
-    }
-  }
+  // send(res, statusCode, body, headers = {}) {
+  //   if (headers['Content-Type'] === 'text/html' && typeof body === 'string') {
+  //     // Treat body as an HTML file path
+  //     this.sendFile(res, path.join(__dirname, body), 'text/html');
+  //   } else {
+  //     res.writeHead(statusCode, { ...headers, 'Content-Type': 'text/plain' });
+  //     res.end(body);
+  //   }
+  // }
 
   handleRequest(req, res) {
     const parsedUrl = url.parse(req.url, true);
