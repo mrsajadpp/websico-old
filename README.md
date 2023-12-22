@@ -1,5 +1,7 @@
 # Webu.js
 
+<img src="https://thintry.com/wp-content/uploads/2023/12/webu.jslogo.png" alt="Webu.js Logo" width="200">
+
 [![GitHub license](https://img.shields.io/github/license/mrsajadpp/webu.svg)](https://github.com/mrsajadpp/webu/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/mrsajadpp/webu.svg)](https://github.com/mrsajadpp/webu/issues)
 [![GitHub stars](https://img.shields.io/github/stars/mrsajadpp/webu.svg)](https://github.com/mrsajadpp/webu/stargazers)
@@ -96,3 +98,7 @@ Feel free to contribute by opening issues or submitting pull requests. See [CONT
 ## License
 
 This project is licensed under the [ISC License](https://opensource.org/licenses/ISC) - see the [LICENSE](LICENSE) file for details.
+
+## Technical Support by https://thintry.com/
+
+<img src="https://thintry.com/wp-content/uploads/2023/12/nobnr2-1.png" alt="Thintry Logo" width="400">
