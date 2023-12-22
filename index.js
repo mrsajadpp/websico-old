@@ -18,7 +18,7 @@ class Terrain {
   }
 
   get(path, handler) {
-    this.routes.GET.push({ path, handler });
+    this.routes.GET.push({ path, handler }); 
   }
 
   put(path, handler) {
