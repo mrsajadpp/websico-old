@@ -112,13 +112,17 @@ class Webu {
     }
   }
 
-  start(port) {
+  start(port, compFunc) {
     const server = http.createServer((req, res) => {
       this.handleRequest(req, res);
     });
 
     server.listen(port, () => {
-      console.log(`${this.startMessage} ${port}`);
+      if (!compFunc) {
+        console.log(`${this.startMessage} ${port}`);
+      } else {
+        compFunc(port);
+      }
     });
   }
 }

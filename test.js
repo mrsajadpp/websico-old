@@ -14,4 +14,6 @@ webu.get('/', (req, res) => {
     });
 });
 
-webu.start(3000);
+webu.start(3000, (port) => {
+    console.log(`Server listening on: ${port}`);
+});

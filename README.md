@@ -49,11 +49,10 @@ webu.error((req, res) => {
   res.send(404, '<h1>Custom 404 Error Page</h1>', { 'Content-Type': 'text/html' });
 });
 
-// Setting a custom start message
-webu.setStartMessage('Custom message:');
-
 // Starting the server on port 3000
-webu.start(3000);
+webu.start(3000, (port) => {
+    console.log(`Server listening on: ${port}`);
+});
 ```
 
 ## Features
