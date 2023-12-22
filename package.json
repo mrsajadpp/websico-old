@@ -1,5 +1,5 @@
 {
-  "name": "terrain",
+  "name": "webu.js",
   "version": "1.0.0",
   "description": "A web server framework.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrsajadpp/terrain.git"
+    "url": "git+https://github.com/mrsajadpp/webu.git"
   },
   "keywords": [
     "framework",
@@ -19,7 +19,7 @@
   "author": "Sajad PP",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrsajadpp/terrain/issues"
+    "url": "https://github.com/mrsajadpp/webu/issues"
   },
-  "homepage": "https://github.com/mrsajadpp/terrain#readme"
+  "homepage": "https://github.com/mrsajadpp/webu#readme"
 }
