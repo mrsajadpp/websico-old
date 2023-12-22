@@ -1,6 +1,6 @@
 {
   "name": "webu.js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A web server framework.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "framework",
     "web",
     "server",
-    "terrain"
+    "webu.js"
   ],
   "author": "Sajad PP",
   "license": "ISC",
