@@ -9,7 +9,7 @@ A web server framework for Node.js.
 ## Installation
 
 ```bash
-npm install webu
+npm install webu.js
 ```
 
 ## Usage
