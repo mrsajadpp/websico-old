@@ -1,7 +1,7 @@
 {
   "name": "webu.js",
-  "version": "1.0.2",
-  "description": "A web server framework.",
+  "version": "1.0.4",
+  "description": "A lightweight and flexible web server framework for Node.js.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,12 @@
     "framework",
     "web",
     "server",
-    "webu.js"
+    "webu.js",
+    "node.js",
+    "http",
+    "routing",
+    "express",
+    "express.js"
   ],
   "author": "Sajad PP",
   "license": "ISC",
