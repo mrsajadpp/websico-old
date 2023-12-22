@@ -1,0 +1,25 @@
+{
+  "name": "terrain",
+  "version": "1.0.0",
+  "description": "A web server framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsajadpp/terrain.git"
+  },
+  "keywords": [
+    "framework",
+    "web",
+    "server",
+    "terrain"
+  ],
+  "author": "Sajad PP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrsajadpp/terrain/issues"
+  },
+  "homepage": "https://github.com/mrsajadpp/terrain#readme"
+}
