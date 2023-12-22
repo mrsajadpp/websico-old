@@ -18,7 +18,6 @@ npm install webu.js
 const fs = require('fs');
 const path = require('path');
 const Webu = require('webu.js');
-const webu = new Webu();
 
 const webu = new Webu();
 
