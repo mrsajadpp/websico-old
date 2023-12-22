@@ -1,4 +1,6 @@
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 const url = require('url');
 
 class Webu {
@@ -14,11 +16,11 @@ class Webu {
       TRACE: [],
       ERROR: [], // Custom error pages
     };
-    this.startMessage = 'Terrain server listening on port';
+    this.startMessage = 'Webu server listening on port';
   }
 
   get(path, handler) {
-    this.routes.GET.push({ path, handler }); 
+    this.routes.GET.push({ path, handler });
   }
 
   put(path, handler) {
@@ -57,6 +59,28 @@ class Webu {
     this.startMessage = message;
   }
 
+  sendFile(res, filePath, contentType = 'text/html') {
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        res.end('Internal Server Error');
+      } else {
+        res.writeHead(200, { 'Content-Type': contentType });
+        res.end(data);
+      }
+    });
+  }
+
+  send(res, statusCode, body, headers = {}) {
+    if (headers['Content-Type'] === 'text/html' && typeof body === 'string') {
+      // Treat body as an HTML file path
+      this.sendFile(res, path.join(__dirname, body), 'text/html');
+    } else {
+      res.writeHead(statusCode, { ...headers, 'Content-Type': 'text/plain' });
+      res.end(body);
+    }
+  }
+
   handleRequest(req, res) {
     const parsedUrl = url.parse(req.url, true);
 
@@ -65,12 +89,20 @@ class Webu {
     );
 
     if (route) {
+      // Enhance the res object with send method
+      res.send = (statusCode, body, headers) =>
+        this.send(res, statusCode, body, headers);
+
       route.handler(req, res);
     } else {
       // Check for custom error page
       const errorPage = this.routes.ERROR.find(e => e.handler);
 
       if (errorPage) {
+        // Enhance the res object with send method
+        res.send = (statusCode, body, headers) =>
+          this.send(res, statusCode, body, headers);
+
         errorPage.handler(req, res);
       } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -90,22 +122,5 @@ class Webu {
   }
 }
 
-// // Example usage
-// const terrain = new Terrain();
-
-// terrain.get('/', (req, res) => {
-//   res.writeHead(200, { 'Content-Type': 'text/plain' });
-//   res.end('GET request to /');
-// });
-
-// terrain.error((req, res) => {
-//   res.writeHead(404, { 'Content-Type': 'text/html' });
-//   res.end('<h1>Custom 404 Error Page</h1>');
-// });
-
-// // Set custom start message
-// // terrain.setStartMessage('Custom message:');
-
-// terrain.start(3000);
-
+// Export the Webu class as a module
 module.exports = Webu;
