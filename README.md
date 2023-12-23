@@ -23,6 +23,9 @@ const Websico = require('websico');
 
 const websico = new Websico();
 
+// Setting public directory
+websico.setPublicDirectory(__dirname + '/public');
+
 // Handling GET requests
 websico.get('/', (req, res) => {
   res.send(200, '<h1>Hello, World!</h1>', { 'Content-Type': 'text/html' });
