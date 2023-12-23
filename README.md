@@ -97,7 +97,7 @@ Feel free to contribute by opening issues or submitting pull requests. See [CONT
 
 ## License
 
-This project is licensed under the [ISC License](https://opensource.org/licenses/ISC) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
 
 ## Technical Support by https://thintry.com/
 
