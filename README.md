@@ -50,6 +50,18 @@ websico.error((req, res) => {
   res.send(404, '<h1>Custom 404 Error Page</h1>', { 'Content-Type': 'text/html' });
 });
 
+// Setting a custom error page for 404 errors (file)
+// websico.error((req, res) => {
+//     // Specify the path to your HTML file
+//     const htmlFilePath = path.join(__dirname, 'view/error.html');
+
+//     // Read the HTML file
+//     fs.readFile(htmlFilePath, 'utf8', (err, data) => {
+//         res.send(404, data, { 'Content-Type': 'text/html' });
+//         // res.end(data);
+//     });
+// })
+
 // Starting the server on port 3000
 websico.start(3000, (port) => {
     console.log(`Server listening on: ${port}`);
