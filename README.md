@@ -1,6 +1,6 @@
 # Websico
 
-<img src="https://thintry.com/wp-content/uploads/2023/12/websico.jslogo.png" alt="Websico Logo" width="200">
+<img src="https://thintry.com/wp-content/uploads/2023/12/webu.jslogo.png" alt="Websico by Thintry" width="200">
 
 [![GitHub license](https://img.shields.io/github/license/mrsajadpp/websico.svg)](https://github.com/mrsajadpp/websico/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/mrsajadpp/websico.svg)](https://github.com/mrsajadpp/websico/issues)
@@ -99,6 +99,6 @@ Feel free to contribute by opening issues or submitting pull requests. See [CONT
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
 
-## Technical Support by https://thintry.com/
+<b>Technical Support by https://thintry.com/</b>
 
 <img src="https://thintry.com/wp-content/uploads/2023/12/nobnr2-1.png" alt="Thintry Logo" width="400">
