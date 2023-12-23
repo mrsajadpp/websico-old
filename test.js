@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const Webu = require('./index');
-const webu = new Webu();
+const websico = new Webu();
 
-webu.get('/', (req, res) => {
+websico.get('/', (req, res) => {
     // Specify the path to your HTML file
     const htmlFilePath = path.join(__dirname, 'index.html');
 
@@ -14,6 +14,6 @@ webu.get('/', (req, res) => {
     });
 });
 
-webu.start(3000, (port) => {
+websico.start(3000, (port) => {
     console.log(`Server listening on: ${port}`);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "webu.js",
+  "name": "websico",
   "version": "1.1.3",
   "description": "A lightweight and flexible web server framework for Node.js.",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrsajadpp/webu.git"
+    "url": "git+https://github.com/mrsajadpp/websico.git"
   },
   "keywords": [
     "framework",
     "web",
     "server",
-    "webu.js",
+    "websico",
     "node.js",
     "http",
     "routing",
@@ -24,7 +24,7 @@
   "author": "Sajad PP",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrsajadpp/webu/issues"
+    "url": "https://github.com/mrsajadpp/websico/issues"
   },
-  "homepage": "https://github.com/mrsajadpp/webu#readme"
+  "homepage": "https://github.com/mrsajadpp/websico#readme"
 }

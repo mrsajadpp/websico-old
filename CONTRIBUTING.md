@@ -1,6 +1,6 @@
-# Contributing to Webu.js
+# Contributing to Websico
 
-Thank you for considering contributing to Webu.js! Your contributions help make this project better.
+Thank you for considering contributing to Websico! Your contributions help make this project better.
 
 ## Code of Conduct
 
@@ -10,11 +10,11 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 ### Reporting Bugs
 
-If you find a bug in Webu.js, please [open an issue](https://github.com/mrsajadpp/webu/issues) and provide as much detail as possible, including steps to reproduce the bug.
+If you find a bug in Websico, please [open an issue](https://github.com/mrsajadpp/websico/issues) and provide as much detail as possible, including steps to reproduce the bug.
 
 ### Suggesting Enhancements
 
-Have an idea to improve Webu.js? Feel free to [open an issue](https://github.com/mrsajadpp/webu/issues) and describe your enhancement. Discussions on new features are highly encouraged.
+Have an idea to improve Websico? Feel free to [open an issue](https://github.com/mrsajadpp/websico/issues) and describe your enhancement. Discussions on new features are highly encouraged.
 
 ### Pull Requests
 
@@ -34,10 +34,10 @@ Please ensure your pull request adheres to the following guidelines:
 
 ### Setting Up Local Development
 
-To set up Webu.js for local development:
+To set up Websico for local development:
 
-1. Clone your fork: `git clone https://github.com/your-username/webu.git`
-2. Navigate to the project directory: `cd webu`
+1. Clone your fork: `git clone https://github.com/your-username/websico.git`
+2. Navigate to the project directory: `cd websico`
 3. Install dependencies: `npm install`
 4. Make your changes and test them locally.
 
@@ -58,4 +58,4 @@ This project is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). Please fa
 
 If you have questions or need help, feel free to open an issue or reach out to the project maintainers.
 
-Thank you for contributing to Webu.js! 🚀
+Thank you for contributing to Websico! 🚀
