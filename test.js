@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const Webu = require('./index');
-const websico = new Webu();
+const Websico = require('./index');
+const websico = new Websico();
 
 websico.get('/', (req, res) => {
     // Specify the path to your HTML file

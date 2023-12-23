@@ -19,9 +19,9 @@ npm install websico
 ```javascript
 const fs = require('fs');
 const path = require('path');
-const Webu = require('websico');
+const Websico = require('websico');
 
-const websico = new Webu();
+const websico = new Websico();
 
 // Handling GET requests
 websico.get('/', (req, res) => {

@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-class Webu {
-  constructor() {
+class Websico {
+  constructor() { 
     this.routes = {
       GET: [],
       PUT: [],
@@ -16,7 +16,7 @@ class Webu {
       TRACE: [],
       ERROR: [], // Custom error pages
     };
-    this.startMessage = 'Webu server listening on port';
+    this.startMessage = 'Websico server listening on port';
   }
 
   get(path, handler) {
@@ -127,5 +127,5 @@ class Webu {
   }
 }
 
-// Export the Webu class as a module
-module.exports = Webu;
+// Export the Websico class as a module
+module.exports = Websico;
