@@ -1,30 +1,32 @@
 {
   "name": "websico",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "description": "A lightweight and flexible web server framework for Node.js.",
-  "main": "index.js",
+  "main": "dist/websico.js",
+  "types": "dist/websico.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrsajadpp/websico.git"
   },
   "keywords": [
-    "framework",
-    "web",
-    "server",
-    "websico",
-    "node.js",
-    "http",
-    "routing",
-    "express",
-    "express.js"
+    "\"framework\""
   ],
-  "author": "Sajad PP",
+  "author": "\",",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrsajadpp/websico/issues"
   },
-  "homepage": "https://github.com/mrsajadpp/websico#readme"
+  "homepage": "https://github.com/mrsajadpp/websico#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
 }
