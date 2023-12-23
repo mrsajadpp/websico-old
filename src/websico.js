@@ -1,6 +1,6 @@
 "use strict";
 var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function (t) {
+    __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
@@ -14,6 +14,7 @@ var http = require("http");
 var fs = require("fs");
 var path = require("path");
 var url = require("url");
+var logger = console.log;
 var Websico = /** @class */ (function () {
     function Websico() {
         this.routes = {
@@ -27,7 +28,6 @@ var Websico = /** @class */ (function () {
             TRACE: [],
             ERROR: [], // Custom error pages
         };
-        this.startMessage = 'Websico server listening on port';
         this.publicDirectory = ''; // Default public directory
     }
     Websico.prototype.sendFile = function (res, filePath, contentType) {
@@ -121,6 +121,19 @@ var Websico = /** @class */ (function () {
                     this.handleStaticFiles(req, res, errorPage);
                 }
             }
+            else {
+                if (errorPage) {
+                    // Enhance the res object with send method
+                    res.send = function (statusCode, body, headers) {
+                        _this.send(res, statusCode, body, headers);
+                    };
+                    errorPage.handler(req, res);
+                }
+                else {
+                    res.writeHead(404, { 'Content-Type': 'text/plain' });
+                    res.end('Not Found');
+                }
+            }
         }
     };
     Websico.prototype.get = function (path, handler) {
@@ -147,14 +160,12 @@ var Websico = /** @class */ (function () {
     Websico.prototype.trace = function (path, handler) {
         this.routes.TRACE.push({ path: path, handler: handler });
     };
-    Websico.prototype.error = function (path, handler) {
-        this.routes.ERROR.push({ path: path, handler: handler });
+    Websico.prototype.error = function (handler) {
+        this.routes.ERROR.push({ handler: handler });
     };
-    Websico.prototype.setStartMessage = function (message) {
-        this.startMessage = message;
-    };
-    Websico.prototype.setPublicDirectory = function (directory) {
-        this.publicDirectory = directory;
+    Websico.prototype.setPublicDirectory = function (directory, fileName) {
+        logger("".concat(directory, "/").concat(fileName));
+        this.publicDirectory = "".concat(directory, "/").concat(fileName);
     };
     Websico.prototype.start = function (port, compFunc) {
         var _this = this;
@@ -166,10 +177,7 @@ var Websico = /** @class */ (function () {
             _this.handleRequest(req, res);
         });
         server.listen(port, function () {
-            if (!compFunc) {
-                console.log("".concat(_this.startMessage, " ").concat(port));
-            }
-            else {
+            if (compFunc) {
                 compFunc(port);
             }
         });

@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as url from 'url';
 import { Buffer } from 'buffer';
+const logger = console.log;
 
 interface CustomServerResponse extends http.ServerResponse {
     send: (
@@ -18,7 +19,7 @@ interface Route {
 }
 
 interface ErrorRoute {
-    path: string;
+    path?: string;
     handler: (req: http.IncomingMessage, res: CustomServerResponse) => void;
 }
 
@@ -36,7 +37,6 @@ interface Routes {
 
 class Websico {
     private routes: Routes;
-    private startMessage: string;
     private publicDirectory: string;
 
     constructor() {
@@ -51,7 +51,6 @@ class Websico {
             TRACE: [],
             ERROR: [], // Custom error pages
         };
-        this.startMessage = 'Websico server listening on port';
         this.publicDirectory = ''; // Default public directory
     }
 
@@ -153,6 +152,18 @@ class Websico {
                 if (req.method === 'GET') {
                     this.handleStaticFiles(req, res, errorPage);
                 }
+            } else {
+                if (errorPage) {
+                    // Enhance the res object with send method
+                    res.send = (statusCode, body, headers) => {
+                        this.send(res, statusCode, body, headers);
+                    }
+
+                    errorPage.handler(req, res);
+                } else {
+                    res.writeHead(404, { 'Content-Type': 'text/plain' });
+                    res.end('Not Found');
+                }
             }
         }
     }
@@ -189,16 +200,13 @@ class Websico {
         this.routes.TRACE.push({ path, handler });
     }
 
-    public error(path: string, handler: (req: http.IncomingMessage, res: CustomServerResponse) => void): void {
-        this.routes.ERROR.push({ path, handler });
+    public error(handler: (req: http.IncomingMessage, res: CustomServerResponse) => void): void {
+        this.routes.ERROR.push({ handler });
     }
 
-    public setStartMessage(message: string): void {
-        this.startMessage = message;
-    }
-
-    public setPublicDirectory(directory: string): void {
-        this.publicDirectory = directory;
+    public setPublicDirectory(directory: string, fileName: string): void {
+        logger(`${directory}/${fileName}`);
+        this.publicDirectory = `${directory}/${fileName}`;
     }
 
     public start(port: number, compFunc?: (port: number) => void): void {
@@ -211,9 +219,7 @@ class Websico {
         });
 
         server.listen(port, () => {
-            if (!compFunc) {
-                console.log(`${this.startMessage} ${port}`);
-            } else {
+            if (compFunc) {
                 compFunc(port);
             }
         });
