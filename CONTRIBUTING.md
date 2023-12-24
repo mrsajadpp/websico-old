@@ -36,7 +36,7 @@ Please ensure your pull request adheres to the following guidelines:
 
 To set up Websico for local development:
 
-1. Clone your fork: `git clone https://github.com/your-username/websico.git`
+1. Clone your fork: `git clone https://github.com/mrsajadpp/websico.git`
 2. Navigate to the project directory: `cd websico`
 3. Install dependencies: `npm install`
 4. Make your changes and test them locally.
